@@ -14,9 +14,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.set('view options', { layout: 'layaout' });
 
 //Renderizar pagina Home
-app.get("/", (req, res, next) => res.render("layaout"));
+app.get("/", (req, res, next) => res.render("index"));
 
 // Renderizar Esperanza de vida
 app.get("/esperanzaVida", (req, res, next) => res.render("esperanzaVida"));
