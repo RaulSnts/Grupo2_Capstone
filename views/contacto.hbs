@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+  </head>
+  <body class="views">
+    <br />
+    <br />
+    <div class="contacto">
+      <form
+        class="text-center border border-light p-5 bg-light"
+        action="/contacto"
+        method="POST"
+      >
+        <p class="h4 mb-4">Contacto</p>
+        <br />
+        <p class="texto">Si necesita más información o quiere dejarnos alguna sugerencia, no lo dude !Contacte con nosotros!</p>
+        <input
+          type="text"
+          id="defaultContactFormName"
+          class="form-control mb-4"
+          placeholder="Nombre"
+          name="nombre"
+        />
+        <input
+          type="text"
+          id="defaultContactFormName"
+          class="form-control mb-4"
+          placeholder="Asunto"
+          name="asunto"
+        />
+        <div class="form-group">
+          <textarea
+            class="form-control rounded-0"
+            id="exampleFormControlTextarea2"
+            rows="3"
+            placeholder="Mensaje"
+            name="mensaje"
+          ></textarea>
+        </div>
+        <button class="btn btn-success btn-block" type="submit">Enviar</button>
+        <br />
+      </form>
+    </div>
+  </body>
+</html>

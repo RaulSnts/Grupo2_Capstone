@@ -30,17 +30,34 @@
       <div class="collapse navbar-collapse" id="exCollapsingNavbar">
         <ul class="nav navbar-nav">
           <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/artistas" class="nav-link">Esperanza de vida</a></li>
-          <li class="nav-item"><a href="/buscador" class="nav-link">Natalidad</a></li>
-          <li class="nav-item"><a href="/contact" class="nav-link">Población</a></li>
+          <li class="nav-item"><a href="/esperanzaVida" class="nav-link">Esperanza de vida</a></li>
+          <li class="nav-item"><a href="/natalidad" class="nav-link">Natalidad</a></li>
+          <li class="nav-item"><a href="/poblacion" class="nav-link">Población</a></li>
+          <li class="nav-item"><a href="/contacto" class="nav-link">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
 
-          
-
-
-
-          
+          <div class="btn-group">
+            <button type="button" id="dropdownMenu1" data-toggle="dropdown"
+              class="btn btn-outline-secondary dropdown-toggle">Iniciar sesión <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right mt-2">
+              <li class="px-3 py-2">
+                <form action="/login" method="POST">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Direccion email</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                      placeholder="example@example.com" name="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*******"
+                      name="password">
+                  </div>
+                  <button type="submit" class="btn btn-success">Iniciar sesión</button>
+                </form>
+              </li>
+            </ul>
+          </div>
         </ul>
       </div>
   </nav>
@@ -59,7 +76,7 @@
   <footer class="bg-dark text-center text-lg-start">
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
       © 2022 Copyright:
-      <a class="text-light"> Raúl Santos & Daniel</a>
+      <a> Raúl Santos & Daniel</a>
     </div>
   </footer>
 </body>

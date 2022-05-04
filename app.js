@@ -18,4 +18,26 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Renderizar pagina Home
 app.get("/", (req, res, next) => res.render("layaout"));
 
+// Renderizar Esperanza de vida
+app.get("/esperanzaVida", (req, res, next) => res.render("esperanzaVida"));
+
+// Renderizar Contacto
+app.get("/contacto", (req, res, next) => res.render("contacto"));
+
+// Enviar correo con los datos del formulario de contacto
+app.post("/contacto", function (req, res) {
+    let nombre = req.body.nombre;
+    let asunto = req.body.asunto;
+    let mensaje = req.body.mensaje;
+  
+    res.redirect(
+      "mailto:raulsr64@gmail.com?&subject=" +
+        asunto +
+        "&body=" +
+        mensaje +
+        ". Mensaje de: " +
+        nombre
+    );
+  });
+
 app.listen(3000, () => console.log("App listening on port 3000!"));
