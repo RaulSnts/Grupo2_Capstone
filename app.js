@@ -16,11 +16,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view options', { layout: 'layaout' });
 
+// VARIABLES
+
 //Renderizar pagina Home
-app.get("/", (req, res, next) => res.render("index"));
+app.get("/", (req, res, next) => res.render("home"));
 
 // Renderizar Esperanza de vida
-app.get("/esperanzaVida", (req, res, next) => res.render("esperanzaVida"));
+app.get("/prueba", (req, res, next) => res.render("index"));
 
 // Renderizar Contacto
 app.get("/contacto", (req, res, next) => res.render("contacto"));
