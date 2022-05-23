@@ -1,12 +1,30 @@
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PRUEBA</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Bienvenido!</title>
     <link rel="stylesheet" href="/stylesheets/styles.css" />
   </head>
-  <body class="home">
-    <br />
-    <h5>PRUEBA</h5>
+  <body>
+    <div class="body"></div>
+		<div class="header">
+			<div>Social<span>Research</span>Organization</div>
+		</div>
+    <div class="descripcion">
+      <div>¡Bienvenido! Inicia sesión con su cuenta o unase para obtener los últimos datos!</div>
+      
+    </div>
+		<br>
+    <div class="cuadro">
+      <form action="/login" method="POST">
+        <div class="login">
+          <input class="cuadroTexto" type="text" placeholder="usuario" name="email"><br>
+          <input type="password" placeholder="password" name="password"><br>
+          <input type="button" value="Iniciar sesión">
+          <input type="button" value="Registrarse">
+        </div>
+      </form>
+    </div> 
   </body>

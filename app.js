@@ -4,6 +4,8 @@ const hbs = require("hbs");
 const path = require("path");
 const bodyParser = require("body-parser");
 
+var inicioSesionIncorrecto = false;
+
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
@@ -16,16 +18,45 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view options', { layout: 'layaout' });
 
-// VARIABLES
 
-//Renderizar pagina Home
-app.get("/", (req, res, next) => res.render("home"));
+// Pagina Inicial - Inicio Sesion / Registrarse
+app.get("/", (req, res, next) => {
+  res.render("index", { layout: false });
+});
 
-// Renderizar Esperanza de vida
-app.get("/prueba", (req, res, next) => res.render("index"));
 
-// Renderizar Contacto
-app.get("/contacto", (req, res, next) => res.render("contacto"));
+// Validación de credenciales de inicio de sesión
+app.post("/login", function (req, res) {
+  let email = req.body.email;
+  let pass = req.body.password;
+  let data = { inicioIncorrecto: true };
+
+  if (email === 'a' /*consulta MONGODB USUARIOS*/ ) {
+    //SI ES CORRECTO COMPROBAR ESA CONTRASEÑA PARA ESE USUARIO
+    res.render("index");
+  } else {
+    res.render("index", data);
+  }
+});
+
+
+// Pagina Home
+app.get("/home", (req, res, next) => {
+  
+  //if (!req.body.email) {
+   // res.redirect("/");
+    //poner que se muestre mensaje de inicio incorrecto (Sporify)
+  //} else {
+
+    //inicio correcto
+    //let email = req.body.email;
+
+    res.render("home");
+  //}
+});
+
+// Registro
+
 
 // Enviar correo con los datos del formulario de contacto
 app.post("/contacto", function (req, res) {

@@ -1,3 +1,114 @@
+/**/
+
+.body{
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
+	background-image: url(https://images6.alphacoders.com/481/481285.jpg);
+	background-size: cover;
+  filter: blur(5px);
+}
+
+
+.header{
+	position: absolute;
+  top: 20%;
+	left: 33.5%;
+}
+
+.header div{
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 35px;
+	font-weight: 200;
+  text-align: center;
+}
+
+.header div span{
+	color: #5379fa;
+}
+
+.descripcion{
+	position: absolute;
+  top: 30%;
+	left: 25%;
+}
+
+.descripcion div{
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 20px;
+	font-weight: 200;
+}
+
+.login{
+	position: absolute;
+	top: 45%;
+	left: 38%;
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+}
+
+.login input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.login input[type=password]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input[type=button]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+::placeholder{
+  color: rgba(255,255,255,0.6);
+}
+
+.login input[type=button]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=button]:active{
+	opacity: 0.6;
+}
+
+
+/**/
+
 .estilo1{
   background-color: black;
   text-transform: none;
@@ -17,6 +128,7 @@
  background-color: #4BA734;
 }
 
+/**/
 .bodyLogin{
   color: aliceblue;
   background-image:url('https://sm.mashable.com/t/mashable_pk/news/s/spotify-re/spotify-releases-top-streamed-songs-artists-and-podcasts-for_1pxv.1248.png');
@@ -24,6 +136,7 @@
   background-repeat: no-repeat;
   background-size:cover;
 }
+/**/
 
 .login{
 
@@ -48,12 +161,6 @@
   color:#4BA734;
 }
 
-
-.body{
-  background-color: black;
-  font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
-  color: aliceblue;
-}
 
 /**/
 
@@ -199,3 +306,7 @@ form {
 .cuadro{
   width: 50px;
 }
+
+
+
+/* */
