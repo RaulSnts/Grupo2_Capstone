@@ -8,13 +8,13 @@
 	bottom: -40px;
 	background-image: url(https://images6.alphacoders.com/481/481285.jpg);
 	background-size: cover;
-  filter: blur(5px);
+  	filter: blur(5px);
 }
 
 
 .header{
 	position: absolute;
-  top: 20%;
+  	top: 20%;
 	left: 33.5%;
 }
 
@@ -23,7 +23,7 @@
 	font-family: 'Exo', sans-serif;
 	font-size: 35px;
 	font-weight: 200;
-  text-align: center;
+ 	text-align: center;
 }
 
 .header div span{
@@ -32,8 +32,8 @@
 
 .descripcion{
 	position: absolute;
-  top: 30%;
-	left: 25%;
+  	top: 30%;
+	left: 37.5%;
 }
 
 .descripcion div{
@@ -43,9 +43,40 @@
 	font-weight: 200;
 }
 
+.descripcion2{
+	position: absolute;
+  top: 30%;
+	left: 25%;
+}
+
+.descripcion2 div{
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 20px;
+	font-weight: 200;
+}
+
 .login{
 	position: absolute;
 	top: 45%;
+	left: 38%;
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+}
+
+.volver{
+	position: absolute;
+	top: 76%;
+	left: 38%;
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+}
+
+.registrarse{
+	position: absolute;
+	top: 63%;
 	left: 38%;
 	height: 150px;
 	width: 350px;
@@ -65,6 +96,20 @@
 	padding: 4px;
 }
 
+.login input[type=text2]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+  margin-top: 10px;
+}
+
 .login input[type=password]{
 	width: 250px;
 	height: 30px;
@@ -79,7 +124,37 @@
 	margin-top: 10px;
 }
 
-.login input[type=button]{
+.login input[type=submit]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.volver input[type=submit]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.registrarse input[type=submit]{
 	width: 260px;
 	height: 35px;
 	background: #fff;
@@ -108,205 +183,3 @@
 
 
 /**/
-
-.estilo1{
-  background-color: black;
-  text-transform: none;
-  background-image:url('https://bc-business-directory.com/wp-content/uploads/2020/06/indice-de-volatilidad.jpg');
-  background-position-x: center;
-  background-repeat: no-repeat;
-  background-size:cover;
- 
-}
-
-.subrayado{
-  text-shadow: #4BA734;
-}
-
-.fondo{
-  text-align: center;
- background-color: #4BA734;
-}
-
-/**/
-.bodyLogin{
-  color: aliceblue;
-  background-image:url('https://sm.mashable.com/t/mashable_pk/news/s/spotify-re/spotify-releases-top-streamed-songs-artists-and-podcasts-for_1pxv.1248.png');
-  background-position-x: center;
-  background-repeat: no-repeat;
-  background-size:cover;
-}
-/**/
-
-.login{
-
-  text-align: center;
-}
-.estilo2{
-  text-align: center;
-
-}
-
-.estilo3 {   
-  text-align: center;
-}
-
-
-.cardImg {
-  height: 400px;
-  object-fit: cover;
-}
-
-.h1{
-  color:#4BA734;
-}
-
-
-/**/
-
-.home {
-  background-image: url("../images/ppal.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-.views {
-  background-image: url("../images/view.jpg");
-  background-position: center center;
-  background-size: cover;
-}
-
-.buscador {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  right: 50%;
-}
-
-.texto {
-  text-align: justify;
-}
-
-.contacto {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  right: 25%;
-}
-
-.text-center.border.border-light.p-5.bg-light {
-  border-radius: 12px;
-  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.75);
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-/*
-body {
-  margin: 0;
-}
-*/
-
-h5 {
-  color: white;
-  text-align: center;
-  margin-top: 5px;
-  font-size: 24px;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-h2,
-h6,
-h3,
-h4 {
-  text-align: center;
-}
-
-form {
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.header {
-  color: #36a0ff;
-  font-size: 27px;
-  padding: 10px;
-}
-
-.bigicon {
-  font-size: 35px;
-  color: #36a0ff;
-}
-
-.btn-success {
-  float: right !important;
-}
-
-.dropdown-menu {
-  border-radius: 12px;
-  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.75);
-}
-
-.C_incorrecta {
-  margin-left: 8px;
-  color: red;
-  padding-top: 10px;
-}
-
-.fa-solid {
-  margin-left: 8px;
-  padding-top: 14px;
-  color: red;
-}
-
-.fotoArtista {
-  width: 70%;
-  height: 300px;
-  display: block;
-  margin: auto;
-}
-
-.cardArtist {
-  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff !important;
-  border-radius: 12px;
-  height: 700px;
-}
-
-.cardArtist:hover {
-  background-color: rgb(228, 228, 228);
-}
-
-.searcher-button {
-  width: 100%;
-}
-
-.genero {
-  color: black;
-}
-
-.generos {
-  padding-left: 50px;
-  padding-right: 50px;
-  text-align: center;
-}
-
-.cuadro{
-  width: 50px;
-}
-
-
-
-/* */

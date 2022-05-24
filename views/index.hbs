@@ -9,22 +9,26 @@
   </head>
   <body>
     <div class="body"></div>
-		<div class="header">
-			<div>Social<span>Research</span>Organization</div>
-		</div>
-    <div class="descripcion">
-      <div>¡Bienvenido! Inicia sesión con su cuenta o unase para obtener los últimos datos!</div>
-      
-    </div>
-		<br>
-    <div class="cuadro">
-      <form action="/login" method="POST">
-        <div class="login">
-          <input class="cuadroTexto" type="text" placeholder="usuario" name="email"><br>
-          <input type="password" placeholder="contraseña" name="password"><br>
-          <input type="button" value="Iniciar sesión">
-          <input type="button" value="Registrarse">
-        </div>
-      </form>
+      <div class="header">
+        <div>Social<span>Research</span>Organization</div>
+      </div>
+      <div class="descripcion2">
+        <div>¡Bienvenido! Inicia sesión con su cuenta o unase para obtener los últimos datos!</div>
+        
+      </div>
+      <br>
+      <div class="cuadro">
+        <form action="/login" method="POST">
+          <div class="login">
+            <input class="cuadroTexto" type="text" placeholder="usuario" name="email"><br>
+            <input type="password" placeholder="contraseña" name="password"><br>
+            <input type="submit" value="Iniciar sesión">
+          </div>
+        </form>
+        <form action="/registro" method="GET">
+          <div class="registrarse">
+            <input type="submit" value="Registrarse">
+          </div>
+        </form> 
     </div> 
   </body>

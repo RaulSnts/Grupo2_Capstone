@@ -1,32 +1,36 @@
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Bienvenido!</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css" />
-  </head>
-  <body>
-    <div class="body"></div>
-		<div class="header">
-			<div>Social<span>Research</span>Organization</div>
-		</div>
-    <div class="descripcion">
-      <div>Complete los siguientes datos y unase!</div>
-      
-    </div>
-		<br>
-    <div class="cuadro">
-      <form action="/login" method="POST">
-        <div class="login">
-          <input class="cuadroTexto" type="text" placeholder="nombre" name="nombre"><br>
-          <input class="cuadroTexto2" type="text" placeholder="email" name="email"><br>
-          <input type="password" placeholder="contraseña" name="password"><br>
-          <input type="password" placeholder="repetir contraseña" name="passwordConfirmacion"><br>
-          <input type="button" value="Registrarse">
-          <input type="button" value="Volver">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Bienvenido!</title>
+        <link rel="stylesheet" href="/stylesheets/styles.css" />
+    </head>
+    <body>
+        <div class="body"></div>
+            <div class="header">
+                <div>Social<span>Research</span>Organization</div>
+            </div>
+        <div class="descripcion">
+            <div>Complete los siguientes datos y unase!</div>
         </div>
-      </form>
-    </div> 
-  </body>
+            <br>
+        <div class="cuadro">
+            <form action="/prueba" method="POST">
+                <div class="login">
+                    <input class="cuadroTexto" type="text" placeholder="nombre" name="nombre"><br>
+                    <input class="cuadroTexto" type="text2" placeholder="email" name="email"><br>
+                    <input type="password" placeholder="contraseña" name="password"><br>
+                    <input type="password" placeholder="repetir contraseña" name="passwordConfirmacion"><br>
+                    <input type="submit" value="Registrarse">   
+                </div>
+            </form>    
+
+            <form action="/" method="GET">
+                <div class="volver">
+                    <input type="submit" value="Volver">
+                </div>
+            </form> 
+        </div> 
+    </body>
