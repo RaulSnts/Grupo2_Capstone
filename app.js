@@ -39,6 +39,11 @@ app.post("/login", function (req, res) {
   }
 });
 
+// Validación de credenciales de inicio de sesión
+app.get("/registro", (req, res, next) => {
+  res.render("registro", { layout: false });
+});
+
 
 // Pagina Home
 app.get("/home", (req, res, next) => {
