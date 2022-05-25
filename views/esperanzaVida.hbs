@@ -1,0 +1,40 @@
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/stylesheets/styleSesion.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>pepa!</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+</head>
+
+<body class="body">
+    <div class="estilo2" width="50%">
+        <div class="headerEsp">
+            <div>Esperanza <span>de</span> Vida</div>
+        </div>
+        <div class="descripcion2">
+            <br>
+            <div>Descubre cual es la esperanza de vida mundial, o detallada de ciertos paises</div>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row d-flex justify-content-between p-4 mt-5 mr-2 ml-2 mb-4" style="background-color: #212121">
+
+            <div class="col-md-6 col-xl-6 col-sm-6">
+                <div class="row d-flex justify-content-between">
+
+
+
+                        {{#each data}}
+                            {{> esperanzaVidaCard this}}
+                            <br><br>
+                        {{/each}}
+
+                        
+
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</body>

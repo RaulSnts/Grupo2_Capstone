@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view options', { layout: 'layaout' });
 
 
-// Pagina Inicial - Inicio Sesion / Registrarse
+// Pagina Iniciar Sesion
 app.get("/", (req, res, next) => {
   res.render("index", { layout: false });
 });
@@ -39,7 +39,7 @@ app.post("/login", function (req, res) {
   }
 });
 
-// Validación de credenciales de inicio de sesión
+// Página Registro
 app.get("/registro", (req, res, next) => {
   res.render("registro", { layout: false });
 });
@@ -60,8 +60,49 @@ app.get("/home", (req, res, next) => {
   //}
 });
 
-// Registro
 
+// Página Esperanza De Vida
+app.get("/esperanzaVida", (req, res, next) => {
+
+  let data = [
+    {
+      imagen: "https://img.freepik.com/vector-gratis/vector-mapa-mundo-mundo-africa-mar-mediterraneo-peninsula-arabiga-centrado-mapa-planeta-azul-esfera-icono-aislado-sobre-fondo-blanco_8130-759.jpg?w=2000",
+      name: "Mundo",
+      grafico: "",
+    },
+    {
+      imagen: "https://labanderadeespaña.com/wp-content/uploads/2020/05/bandera-espa%C3%B1a-sin-escudo.jpg",
+      name: "España",
+    },
+    {
+      imagen: "Japón",
+      name: "Estados Unidos",
+    },
+    {
+      imagen: "Japón",
+      name: "China",
+    },
+    {
+      imagen: "Japón",
+      name: "India",
+    },
+    {
+      imagen: "Japón",
+      name: "p",
+    },
+  ];
+
+  res.render("esperanzaVida", {
+    data: data,
+    esperanzaVidaCard: req.query.data,
+  });
+});
+
+
+// Página Contacto
+app.get("/contacto", (req, res, next) => {
+  res.render("contacto");
+});
 
 // Enviar correo con los datos del formulario de contacto
 app.post("/contacto", function (req, res) {
@@ -78,5 +119,11 @@ app.post("/contacto", function (req, res) {
         nombre
     );
   });
+
+
+
+app.get("/*", (request, response, next) => {
+  response.render("404",  { layout: false });
+});
 
 app.listen(3000, () => console.log("App listening on port 3000!"));

@@ -21,6 +21,24 @@
 	color: #5379fa;
 }
 
+.headerEsp{
+	position: absolute;
+  top: 20%;
+	left: 33.5%;
+}
+
+.headerEsp div{
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 50px;
+	font-weight: 200;
+  text-align: center;
+}
+
+.headerEsp div span{
+	color: #5379fa;
+}
+
 .estilo1{
   height: 300px;
 	background-image: url(https://images6.alphacoders.com/481/481285.jpg);
@@ -65,6 +83,17 @@
   color: rgb(214, 214, 214);
 }
 
+
+.views {
+  background-image: url(https://images6.alphacoders.com/481/481285.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.estilo2{
+  height: 300px;
+}
+
   /*********/
 
 
@@ -86,10 +115,7 @@
   
     text-align: center;
   }
-  .estilo2{
-    text-align: center;
-  
-  }
+
   
   .estilo3 {   
     text-align: center;
@@ -113,11 +139,7 @@
     background-size: cover;
   }
   
-  .views {
-    background-image: url("../images/view.jpg");
-    background-position: center center;
-    background-size: cover;
-  }
+ 
   
   .buscador {
     display: flex;
