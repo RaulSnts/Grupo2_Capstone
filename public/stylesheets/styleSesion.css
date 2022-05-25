@@ -39,6 +39,24 @@
 	color: #5379fa;
 }
 
+.headerNAt{
+	position: absolute;
+  top: 20%;
+	left: 40%;
+}
+
+.headerNAt div{
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 50px;
+	font-weight: 200;
+  text-align: center;
+}
+
+.headerNAt div span{
+	color: #5379fa;
+}
+
 .estilo1{
   height: 300px;
 	background-image: url(https://images6.alphacoders.com/481/481285.jpg);
@@ -94,6 +112,41 @@
   height: 300px;
 }
 
+.fotoArtista {
+  width: 70%;
+  height: 300px;
+  display: block;
+  margin: auto;
+}
+
+.cardEsperanza {
+  background-color: rgb(9, 9, 9);
+  border-radius: 12px;
+  height: 700px;
+}
+
+.nombre {
+  color: #5379fa;
+  font-size: 40px;
+}
+
+.genero {
+  color: rgb(214, 214, 214);
+  font-size: 23px;
+}
+
+.generos {
+  color: rgb(214, 214, 214);
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.video{
+  position: absolute;
+  left: 19%;
+}
   /*********/
 
 
@@ -224,40 +277,7 @@
     color: red;
   }
   
-  .fotoArtista {
-    width: 70%;
-    height: 300px;
-    display: block;
-    margin: auto;
-  }
-  
-  .cardArtist {
-    box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff !important;
-    border-radius: 12px;
-    height: 700px;
-  }
-  
-  .cardArtist:hover {
-    background-color: rgb(228, 228, 228);
-  }
-  
-  .searcher-button {
-    width: 100%;
-  }
-  
-  .genero {
-    color: black;
-  }
-  
-  .generos {
-    padding-left: 50px;
-    padding-right: 50px;
-    text-align: center;
-  }
-  
-  .cuadro{
-    width: 50px;
-  }
+ 
   
   
   

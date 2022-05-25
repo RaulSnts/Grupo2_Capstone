@@ -66,29 +66,49 @@ app.get("/esperanzaVida", (req, res, next) => {
 
   let data = [
     {
-      imagen: "https://img.freepik.com/vector-gratis/vector-mapa-mundo-mundo-africa-mar-mediterraneo-peninsula-arabiga-centrado-mapa-planeta-azul-esfera-icono-aislado-sobre-fondo-blanco_8130-759.jpg?w=2000",
-      name: "Mundo",
-      grafico: "",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Americas_on_the_globe_%28red%29.svg/1200px-Americas_on_the_globe_%28red%29.svg.png",
+      datos: {
+        name: "América",
+        global: "79",
+        hombres: "77",
+        mujeres: "81",
+      },
     },
     {
-      imagen: "https://labanderadeespaña.com/wp-content/uploads/2020/05/bandera-espa%C3%B1a-sin-escudo.jpg",
-      name: "España",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Europe_on_the_globe_%28red%29.svg/1200px-Europe_on_the_globe_%28red%29.svg.png",
+      datos: {
+        name: "Europa",
+        global: "78",
+        hombres: "74",
+        mujeres: "81",
+      },
     },
     {
-      imagen: "Japón",
-      name: "Estados Unidos",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Oceania_on_the_globe_%28red%29_%28Polynesia_centered%29.svg/1200px-Oceania_on_the_globe_%28red%29_%28Polynesia_centered%29.svg.png",
+      datos: {
+        name: "Oceanía",
+        global: "77",
+        hombres: "75",
+        mujeres: "80",
+      },
     },
     {
-      imagen: "Japón",
-      name: "China",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Asia_on_the_globe_%28red%29.svg/1200px-Asia_on_the_globe_%28red%29.svg.png",
+      datos: {
+        name: "Asia",
+        global: "72",
+        hombres: "70",
+        mujeres: "74",
+      },
     },
     {
-      imagen: "Japón",
-      name: "India",
-    },
-    {
-      imagen: "Japón",
-      name: "p",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Africa_on_the_globe_%28red%29.svg/1200px-Africa_on_the_globe_%28red%29.svg.png",
+      datos: {
+        name: "África",
+        global: "60",
+        hombres: "58",
+        mujeres: "61",
+      },
     },
   ];
 
@@ -96,6 +116,12 @@ app.get("/esperanzaVida", (req, res, next) => {
     data: data,
     esperanzaVidaCard: req.query.data,
   });
+});
+
+
+// Página Natalidad
+app.get("/natalidad", (req, res, next) => {
+  res.render("natalidad");
 });
 
 
