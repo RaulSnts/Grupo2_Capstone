@@ -4,10 +4,18 @@ const hbs = require("hbs");
 const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-const { MongoClient } = require("mongodb");
+const mongoose = require("mongoose");
+const { Db } = require("mongodb");
+const { userInfo } = require("os");
+const Usuario = require('../Grupo2_Capstone-1/models/Usuarios')
 
 var inicioSesionIncorrecto = false;
-const uri ="mongodb://localhost/27017";
+
+
+const nombre = "raul_admin";
+const password = "Hm3vhVr8ahNCGYdr"
+const uri = `mongodb+srv://raul_admin:${password}@cluster0.pjv02.mongodb.net/?retryWrites=true&w=majority`;
+
 
 
 app.set("view engine", "hbs");
@@ -27,6 +35,15 @@ app.use(session({
   saveUninitialized: true,
   resave: true,
 }));
+
+
+// Conexion a la bases de datos
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true}
+    )
+    .then(() => console.log('Base de Datos conectada'))
+    .catch(e => console.log(e)); 
 
 // Pagina Iniciar Sesion
 app.get("/", (req, res, next) => {
@@ -51,6 +68,28 @@ app.post("/login", function (req, res) {
 // Página Registro
 app.get("/registro", (req, res, next) => {
   res.render("registro", { layout: false });
+});
+
+// Registro
+app.post("/registro", async (req, res) => {
+  let nombre = req.body.nombre;
+  let email = req.body.email;
+  let pass1 = req.body.password1;
+  let pass2 = req.body.passwordConfirmacion;
+
+  const arrayUsuario = await Usuario.findOne({ correo_electronico: email });
+  console.log(arrayUsuario);
+  
+  if(arrayUsuario)
+  {
+    console.log("prueb");
+    res.render("registro", { layout: false });
+    
+    
+  }else{
+    console.log("Ya existe");
+    res.render("registro", { layout: false });
+  }
 });
 
 
