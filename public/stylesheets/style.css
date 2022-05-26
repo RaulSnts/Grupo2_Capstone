@@ -181,6 +181,19 @@
 	opacity: 0.6;
 }
 
+.error{
+	position: absolute;
+  	top: 36%;
+	left: 33.5%;
+}
+
+.error div{
+	color: rgb(255, 0, 0);
+	font-family: 'Exo', sans-serif;
+	font-size: 25px;
+	font-weight: 200;
+ 	text-align: center;
+}
 
 /* Style error 404 */
 

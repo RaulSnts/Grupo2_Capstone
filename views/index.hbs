@@ -20,7 +20,7 @@
       <div class="cuadro">
         <form action="/login" method="POST">
           <div class="login">
-            <input class="cuadroTexto" type="text" placeholder="usuario" name="email"><br>
+            <input class="cuadroTexto" type="text" placeholder="email" name="email"><br>
             <input type="password" placeholder="contraseña" name="password"><br>
             <input type="submit" value="Iniciar sesión">
           </div>
@@ -30,5 +30,24 @@
             <input type="submit" value="Registrarse">
           </div>
         </form> 
+
+        {{#if contraseñaIncorrecta}}
+          <div class="error">
+            <div>La contraseña introducida es incorrecta!</div>
+          </div>
+        {{/if}} 
+
+        {{#if emailIncorrecto}}
+          <div class="error">
+            <div>El email  introducido  es incorrecto!</div>
+          </div>
+        {{/if}} 
+
+        {{#if datosIncompletos}}
+          <div class="error">
+            <div>Introduce todos los datos requeridos!</div>
+          </div>
+        {{/if}} 
+
     </div> 
   </body>

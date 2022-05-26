@@ -30,6 +30,26 @@
                 <div class="volver">
                     <input type="submit" value="Volver">
                 </div>
-            </form> 
+            </form>
+
+            {{#if datosIncompletos}}
+                <div class="error">
+                    <div>Introduce todos los datos requeridos!</div>
+                </div>
+            {{/if}} 
+
+            {{#if contrasenasDiferentes}}
+                <div class="error">
+                    <div>Ambas contraseñas deben coincidir!</div>
+                </div>
+            {{/if}} 
+
+            {{#if emailYaRegistrado}}
+                <div class="error">
+                    <div>El email que ha introducido ya existe!</div>
+                </div>
+            {{/if}} 
+
+ 
         </div> 
     </body>
