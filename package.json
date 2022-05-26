@@ -1,8 +1,7 @@
 {
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon app.js"
   },
   "author": "Santos Recio, Raúl",
   "dependencies": {
@@ -11,5 +10,21 @@
     "hbs": "^4.2.0",
     "mongodb": "^4.6.0",
     "mongoose": "^6.3.4"
+  },
+  "name": "grupo2_capstone-1",
+  "description": "",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaulSnts/Grupo2_Capstone.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaulSnts/Grupo2_Capstone/issues"
+  },
+  "homepage": "https://github.com/RaulSnts/Grupo2_Capstone#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }

@@ -5,15 +5,15 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const mongoose = require("mongoose");
+const Usuario = require("./models/Usuarios")
+
 const { Db } = require("mongodb");
 const { userInfo } = require("os");
-const Usuario = require('../Grupo2_Capstone-1/models/Usuarios')
+
 
 var inicioSesionIncorrecto = false;
 
-
-const nombre = "raul_admin";
-const password = "Hm3vhVr8ahNCGYdr"
+const password = "MOl48FssxblU2L6b";
 const uri = `mongodb+srv://raul_admin:${password}@cluster0.pjv02.mongodb.net/?retryWrites=true&w=majority`;
 
 
@@ -38,12 +38,7 @@ app.use(session({
 
 
 // Conexion a la bases de datos
-mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true}
-    )
-    .then(() => console.log('Base de Datos conectada'))
-    .catch(e => console.log(e)); 
+mongoose.connect(uri);
 
 // Pagina Iniciar Sesion
 app.get("/", (req, res, next) => {
@@ -56,6 +51,8 @@ app.post("/login", function (req, res) {
   let email = req.body.email;
   let pass = req.body.password;
   let data = { inicioIncorrecto: true };
+
+  
 
   if (email === 'a' /*consulta MONGODB USUARIOS*/ ) {
     //SI ES CORRECTO COMPROBAR ESA CONTRASEÑA PARA ESE USUARIO
@@ -77,9 +74,11 @@ app.post("/registro", async (req, res) => {
   let pass1 = req.body.password1;
   let pass2 = req.body.passwordConfirmacion;
 
-  const arrayUsuario = await Usuario.findOne({ correo_electronico: email });
-  console.log(arrayUsuario);
+  const user = new Usuario({ nombre: "Raúl", correo_electronico: "raulsr64@gmail.com", password: "a"})
+  user.save();
+  console.log(user);;
   
+  /*
   if(arrayUsuario)
   {
     console.log("prueb");
@@ -90,6 +89,7 @@ app.post("/registro", async (req, res) => {
     console.log("Ya existe");
     res.render("registro", { layout: false });
   }
+  */
 });
 
 
