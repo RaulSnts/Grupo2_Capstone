@@ -3,8 +3,11 @@ const app = express();
 const hbs = require("hbs");
 const path = require("path");
 const bodyParser = require("body-parser");
+const session = require("express-session");
+const { MongoClient } = require("mongodb");
 
 var inicioSesionIncorrecto = false;
+const uri ="mongodb://localhost/27017";
 
 
 app.set("view engine", "hbs");
@@ -18,6 +21,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view options', { layout: 'layaout' });
 
+
+app.use(session({
+  secret: "secret8465161616545610raul165513165clave",
+  saveUninitialized: true,
+  resave: true,
+}));
 
 // Pagina Iniciar Sesion
 app.get("/", (req, res, next) => {
