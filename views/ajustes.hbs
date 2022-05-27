@@ -1,10 +1,11 @@
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/stylesheets/styleSesion.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/stylesheets/styleSesion.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Ajustes</title>
+    </head>
     <body class="views">
         <div class="ajustes">
         <form action="/cambiarContrasena" method="POST">
@@ -46,15 +47,15 @@
         </form>  
         
         {{#if contraseñaIncorrecta}}
-          <div class="error">
-            <div>La contraseña actual es incorrecta!</div>
-          </div>
+            <div class="error">
+                <div>La contraseña actual es incorrecta!</div>
+            </div>
         {{/if}} 
 
         {{#if datosIncompletos}}
-          <div class="error">
-            <div>Introduce todos los datos requeridos!</div>
-          </div>
+            <div class="error">
+                <div>Introduce todos los datos requeridos!</div>
+            </div>
         {{/if}}  
 
         {{#if contrasenasDiferentes}}

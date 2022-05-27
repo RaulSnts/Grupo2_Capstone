@@ -8,7 +8,6 @@ const mongoose = require("mongoose");
 const Usuario = require("./models/Usuarios")
 
 
-
 var contrasenasDiferentes = false;
 var emailYaRegistrado = false;
 var datosIncompletos = false;
@@ -21,16 +20,14 @@ const password = "MOl48FssxblU2L6b";
 const uri = `mongodb+srv://raul_admin:${password}@cluster0.pjv02.mongodb.net/?retryWrites=true&w=majority`;
 
 
-
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 hbs.registerPartials("partials_absolute_path");
 hbs.registerPartials(__dirname + "/views/partials");
 
+
 app.use(express.static(path.join(__dirname, "public")));
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.set('view options', { layout: 'layaout' });
 
 
@@ -41,8 +38,9 @@ app.use(session({
 }));
 
 
-// Conexion a la bases de datos
+// CONEXION CON LA BASE DE DATOS
 mongoose.connect(uri);
+
 
 // Pagina Iniciar Sesion
 app.get("/", (req, res, next) => {
@@ -54,7 +52,6 @@ app.get("/", (req, res, next) => {
 app.post("/login", async (req, res) => {
   let email = req.body.email;
   let password = req.body.password;
-
 
   if((email.length <= 0) || (password.length <= 0)){
     datosIncompletos = true;
@@ -75,7 +72,6 @@ app.post("/login", async (req, res) => {
         req.session.save(function (err) {
           res.render("home", { nombreUsuario });
         })
-        
       }else{
         contraseñaIncorrecta = true;
         res.render("index", { contraseñaIncorrecta, layout: false });
@@ -86,6 +82,7 @@ app.post("/login", async (req, res) => {
     }
   }
 });
+
 
 // Página Registro
 app.get("/registro", (req, res, next) => {
@@ -98,13 +95,11 @@ app.post("/registro", async (req, res) => {
   let email = req.body.email;
   let pass1 = req.body.password1;
   let pass2 = req.body.passwordConfirmacion;
-
-  
   
   if((nombre.length <= 0) || (email.length <= 0) ){
     datosIncompletos = true;
     res.render("registro", { datosIncompletos, layout: false });
-  }else if((password == null) || (pass1 != pass2)){
+  }else if((pass1 <=0 ) || (pass2 <=0) || (pass1 != pass2)){
     contrasenasDiferentes = true;
     res.render("registro", { contrasenasDiferentes, layout: false });
   }else{
@@ -220,10 +215,12 @@ app.get("/contacto", (req, res, next) => {
 });
 
 // Enviar correo con los datos del formulario de contacto
-app.post("/contacto", function (req, res) {
-    let nombre = req.body.nombre;
+app.post("/contacto", async (req, res) => {
     let asunto = req.body.asunto;
     let mensaje = req.body.mensaje;
+
+    let consuta = await Usuario.find( { correo_electronico: req.session.email }, "nombre" );
+    var nombreUsuario = consuta[0].nombre;
   
     res.redirect(
       "mailto:raulsr64@gmail.com?&subject=" +
@@ -231,7 +228,7 @@ app.post("/contacto", function (req, res) {
         "&body=" +
         mensaje +
         ". Mensaje de: " +
-        nombre
+        nombreUsuario
     );
   });
 
@@ -265,15 +262,11 @@ app.post("/cambiarContrasena", async (req, res) =>{
   let consuta = await Usuario.find( { correo_electronico: email }, "password" );
   var contraseña = consuta[0].password;
 
-  console.log(nombreUsuario);
-  console.log(contraseña);
-
   if(contraseñaActual.length <= 0){
     datosIncompletos = true;
     res.render("ajustes", { datosIncompletos, email, nombreUsuario });
   }else if(contraseñaActual != contraseña){
     contraseñaIncorrecta = true;
-    console.log("asdd");
     res.render("ajustes", { contraseñaIncorrecta, email, nombreUsuario });
   }else if(contraseñaNueva.length <=0 ||contraseñaNueva2 <= 0){
     datosIncompletos = true;
