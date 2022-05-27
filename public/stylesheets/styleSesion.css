@@ -147,6 +147,28 @@
   position: absolute;
   left: 19%;
 }
+
+.ajustes {
+
+  position: absolute;
+  top: 11%;
+  left: 20%;
+}
+
+
+.error{
+	position: absolute;
+  top: 70%;
+	left: 3%;
+}
+
+.error div{
+	color: rgb(255, 0, 0);
+	font-family: 'Exo', sans-serif;
+	font-size: 25px;
+	font-weight: 400;
+  text-align: center;
+}
   /*********/
 
 
@@ -221,6 +243,7 @@
   .text-center.border.border-light.p-5.bg-light {
     border-radius: 12px;
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.75);
+    width: 900px;
   }
   
   footer {

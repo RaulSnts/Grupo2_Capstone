@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>SocialResearchOrganization</title>
-  <link rel="stylesheet" href="/stylesheets/prueba.css" />
+  <link rel="stylesheet" href="/stylesheets/styleLayout.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/530569238e.js" crossorigin="anonymous"></script>
@@ -32,15 +32,18 @@
           <li class="nav-item"><a href="/home" class="nav-link">Inicio</a></li>
           <li class="nav-item"><a href="/esperanzaVida" class="nav-link">Esperanza de vida</a></li>
           <li class="nav-item"><a href="/natalidad" class="nav-link">Natalidad</a></li>
-          <li class="nav-item"><a href="/poblacion" class="nav-link">Población</a></li>
           <li class="nav-item"><a href="/contacto" class="nav-link">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
           <div class="btn-group">
             <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Cuenta <span class="caret"></span></button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Ajustes</a>
-              <a class="dropdown-item" href="#">Cerrar sesión</a>
+              <form action="/ajustes" method="GET">
+                <input type="submit" value="Ajustes">
+              </form>
+              <form action="/cerrarSesion" method="GET">
+                <input type="submit" value="Cerrar sesión">
+              </form>
             </div>
           </div>
         </ul>

@@ -6,10 +6,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const mongoose = require("mongoose");
 const Usuario = require("./models/Usuarios")
-const alert = require("alert");
 
-const { Db } = require("mongodb");
-const { userInfo } = require("os");
 
 
 var contrasenasDiferentes = false;
@@ -18,6 +15,7 @@ var datosIncompletos = false;
 
 var emailIncorrecto = false;
 var contraseñaIncorrecta = false;
+
 
 const password = "MOl48FssxblU2L6b";
 const uri = `mongodb+srv://raul_admin:${password}@cluster0.pjv02.mongodb.net/?retryWrites=true&w=majority`;
@@ -69,9 +67,10 @@ app.post("/login", async (req, res) => {
       const checkPassword = await Usuario.findOne({ correo_electronico: email, password: password});
 
       if(checkPassword){
-        //////
-        let nombreUsuario = await Usuario.find( { correo_electronico: email }, "nombre" );
-        //console.log(nombreUsuario);
+
+        let consuta = await Usuario.find( { correo_electronico: email }, "nombre" );
+        var nombreUsuario = consuta[0].nombre;
+
         req.session.email = email;
         req.session.save(function (err) {
           res.render("home", { nombreUsuario });
@@ -126,12 +125,15 @@ app.post("/registro", async (req, res) => {
 
 
 // Pagina Home
-app.get("/home", (req, res, next) => {
+app.get("/home", async (req, res) => {
   
   if (!req.session.email) {
     res.redirect("/");
   }else{
-    res.render("home");
+    let consuta = await Usuario.find( { correo_electronico: req.session.email }, "nombre" );
+    var nombreUsuario = consuta[0].nombre;
+
+    res.render("home", { nombreUsuario });
   }
 });
 
@@ -234,7 +236,73 @@ app.post("/contacto", function (req, res) {
   });
 
 
+// Ajustes
+app.get("/ajustes", async (req, res) => {
 
+  if (!req.session.email) {
+    res.redirect("/");
+  }else{
+    let email = req.session.email;
+
+    let consuta = await Usuario.find( { correo_electronico: email }, "nombre" );
+    var nombreUsuario = consuta[0].nombre;
+
+    res.render("ajustes", { email, nombreUsuario });
+  }
+});
+
+
+//Cambiar contraseña
+app.post("/cambiarContrasena", async (req, res) =>{
+  let contraseñaActual = req.body.pssActual;
+  let contraseñaNueva = req.body.pssNueva;
+  let contraseñaNueva2 = req.body.pssNueva2;
+
+  let email = req.session.email;
+  let consutaUser = await Usuario.find( { correo_electronico: email }, "nombre" );
+  var nombreUsuario = consutaUser[0].nombre;
+
+  let consuta = await Usuario.find( { correo_electronico: email }, "password" );
+  var contraseña = consuta[0].password;
+
+  console.log(nombreUsuario);
+  console.log(contraseña);
+
+  if(contraseñaActual.length <= 0){
+    datosIncompletos = true;
+    res.render("ajustes", { datosIncompletos, email, nombreUsuario });
+  }else if(contraseñaActual != contraseña){
+    contraseñaIncorrecta = true;
+    console.log("asdd");
+    res.render("ajustes", { contraseñaIncorrecta, email, nombreUsuario });
+  }else if(contraseñaNueva.length <=0 ||contraseñaNueva2 <= 0){
+    datosIncompletos = true;
+    res.render("ajustes", { datosIncompletos, email, nombreUsuario });
+  }else if(contraseñaNueva != contraseñaNueva2){
+    contrasenasDiferentes = true;
+    res.render("ajustes", { contrasenasDiferentes, email, nombreUsuario });
+  }else{
+    await Usuario.findOneAndUpdate({ correo_electronico: email }, { password: contraseñaNueva });
+    res.render("ajustes", { email, nombreUsuario });
+  }
+});
+
+// Cerrar sesion
+app.get("/cerrarSesion", (req, res) => {
+  
+  req.session.destroy();
+  res.redirect("/");
+});
+
+// Eliminar cuenta
+app.get("/eliminarCuenta", async (req, res) => {
+  
+  await Usuario.findOneAndDelete( { correo_electronico: req.session.email } );
+  req.session.destroy();
+  res.render("index",  { layout: false } );
+});
+
+// Página de error 404
 app.get("/*", (request, response, next) => {
   response.render("404",  { layout: false });
 });

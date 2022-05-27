@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/stylesheets/styleSesion.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+    <body class="views">
+        <div class="ajustes">
+        <form action="/cambiarContrasena" method="POST">
+            <div class="text-center border border-light p-5 bg-light">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Nombre</label>
+                        <input type="text" class="form-control" id="inputEmail4" value="{{nombreUsuario}}" placeholder="" readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Email</label>
+                        <input type="text" class="form-control" id="inputPassword4" value="{{email}}" placeholder="" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Introduce tu contraseña</label>
+                    <input type="password" class="form-control" id="inputAddress" name="pssActual" placeholder="Introduce su contraseña actual">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Nueva contraseña</label>
+                    <input type="password" class="form-control" id="inputAddress2" name="pssNueva" placeholder="Introduce su nueva contraseña">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Confirmar contraseña</label>
+                    <input type="password" class="form-control" id="inputAddress2" name="pssNueva2" placeholder="Vuelve a introducir su nueva contraseña">
+                </div>
+                <div class="form-row">
+                    
+                </div>
+                <div class="form-group">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </form>
+
+        <form action="/eliminarCuenta" method="GET">
+            <button type="submit" class="btn btn-danger">Eliminar cuenta</button>
+        </form>  
+        
+        {{#if contraseñaIncorrecta}}
+          <div class="error">
+            <div>La contraseña actual es incorrecta!</div>
+          </div>
+        {{/if}} 
+
+        {{#if datosIncompletos}}
+          <div class="error">
+            <div>Introduce todos los datos requeridos!</div>
+          </div>
+        {{/if}}  
+
+        {{#if contrasenasDiferentes}}
+                <div class="error">
+                    <div>Ambas contraseñas deben coincidir!</div>
+                </div>
+        {{/if}} 
+    </body>
+</html>
